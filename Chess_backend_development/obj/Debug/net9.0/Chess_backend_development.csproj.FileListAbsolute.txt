@@ -1,0 +1,15 @@
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.AssemblyInfoInputs.cache
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.AssemblyInfo.cs
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.csproj.CoreCompileInputs.cache
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.sourcelink.json
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\bin\Debug\net9.0\Chess_backend_development.exe
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\bin\Debug\net9.0\Chess_backend_development.deps.json
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\bin\Debug\net9.0\Chess_backend_development.runtimeconfig.json
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\bin\Debug\net9.0\Chess_backend_development.dll
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\bin\Debug\net9.0\Chess_backend_development.pdb
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.dll
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\refint\Chess_backend_development.dll
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.pdb
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\Chess_backend_development.genruntimeconfig.cache
+C:\Users\jrirr\OneDrive\open_projects\Chess\Chess_backend_development\obj\Debug\net9.0\ref\Chess_backend_development.dll

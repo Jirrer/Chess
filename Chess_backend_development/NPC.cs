@@ -5,7 +5,7 @@ using System;
 public class NPC
 {
     public int color;
-    public Piece[] pieces = new Piece[16];
+    public Piece?[] pieces = new Piece?[16];
     public bool checkMate = false;
 
     public void checkForMate() {
@@ -61,9 +61,35 @@ public class NPC
         }
     }
 
+    public void removePiece(int x, int y)
+    {
+        for (int index = 0; index < 16; index++)
+        {
+            if (this.pieces[index].x == x && this.pieces[index].y == y)
+            {
+                this.pieces[index] = null;
+            }
+        }
+    }
+
     public void makeMove((NPC?, int)[,] board)
     {
         // need to determine move here
+        if (this.color == 0)
+        {
+            this.pieces[0].x = 7;
+            this.pieces[0].y = 5;
+
+        }
+        else
+        {
+            this.pieces[4].x = 5;
+            this.pieces[4].y = 1;
+        }
+
+
+
+
 
     }
 }

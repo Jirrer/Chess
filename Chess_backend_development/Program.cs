@@ -20,11 +20,22 @@ static class Program
 
         while (!npc1.checkMate && !npc2.checkMate)
         {
-            if (playerTurn == 0) { npc1.makeMove(board); playerTurn = 1; npc2.checkForMate(); }
-            else if (playerTurn == 1) { npc2.makeMove(board); playerTurn = 0; npc1.checkForMate(); }
+            if (playerTurn == 0)
+            {
+                npc1.makeMove(board);
+                playerTurn = 1;
+                updateNPCBoard(npc2, npc1);
+            }
 
-            if (playerTurn == 0) { updateNPCBoard(npc1, npc2); }
-            else { updateNPCBoard(npc2, npc1); }
+            else if (playerTurn == 1)
+            {
+                npc2.makeMove(board);
+                playerTurn = 0;
+                updateNPCBoard(npc1, npc2);
+            }
+
+            npc1.checkForMate();
+            npc2.checkForMate();
 
             Console.WriteLine($"Turn Move: {playerTurn}");
             Console.Write("Next Move");
@@ -35,33 +46,50 @@ static class Program
 
     static void updateNPCBoard(NPC defender, NPC attacker)
     {
+        clearBoard();
+        placeDefender(defender);
+        placeAttacker(attacker, defender);
+        printBoard();
+    }
+
+    static void clearBoard()
+    {
         for (int row = 0; row < 8; row++)
         {
             for (int col = 0; col < 8; col++)
             {
                 board[row, col].Item1 = null;
             }
-        }
+        }   
+    }
 
+    static void placeDefender(NPC defender)
+    {
         for (int pieceIndex = 0; pieceIndex < 16; pieceIndex++)
+        {
+            if (defender.pieces[pieceIndex] != null)
             {
-                if (defender.pieces[pieceIndex] != null)
-                {
-                    board[defender.pieces[pieceIndex].x, defender.pieces[pieceIndex].y] = (defender, pieceIndex);
-                }
+                int defenderX = defender.pieces[pieceIndex].x;
+                int defenderY = defender.pieces[pieceIndex].y;
+                board[defenderX, defenderY] = (defender, pieceIndex);
             }
+        }
+    }
 
+    static void placeAttacker(NPC attacker, NPC defender)
+    {
         for (int pieceIndex = 0; pieceIndex < 16; pieceIndex++)
         {
             if (attacker.pieces[pieceIndex] != null)
             {
-                if (board[attacker.pieces[pieceIndex].x, attacker.pieces[pieceIndex].y].Item1 != null) { defender.removePiece(attacker.pieces[pieceIndex].x, attacker.pieces[pieceIndex].y); }
-                
-                board[attacker.pieces[pieceIndex].x, attacker.pieces[pieceIndex].y] = (attacker, pieceIndex);
-            }
-        }
+                int attackerX = attacker.pieces[pieceIndex].x;
+                int attackerY = attacker.pieces[pieceIndex].y;
 
-        printBoard();
+                if (board[attackerX, attackerY].Item1 != null) { defender.removePiece(attackerX, attackerY); }
+                
+                board[attackerX, attackerY] = (attacker, pieceIndex);
+            }
+        }  
     }
     static void printBoard()
     {
@@ -85,11 +113,9 @@ static class Program
                     Console.Write(board[row, col].Item1.pieces[board[row, col].Item2].pieceType + "\t");
                 }
             }
+            
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
         }
-    }
-
-
-    
+    }    
 }

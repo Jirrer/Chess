@@ -6,10 +6,14 @@ public class Piece
 {
     public int pieceType;
     public string ?name;
+    public int x;
+    public int y;
 
-    public Piece(int pieceType)
+    public Piece(int pieceType, (int, int) location)
     {
         this.pieceType = pieceType;
+        this.x = location.Item1;
+        this.y = location.Item2;
 
         switch (pieceType)
         {
